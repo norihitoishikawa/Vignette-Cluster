@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Serif JP", serif;
+  --font-serif: "Playfair Display", serif;
+  --color-wine: #950619;
+  --color-ink: #4A4A4A;
+  --color-paper: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink selection:bg-wine/10 selection:text-wine;
+    font-feature-settings: "palt";
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(149, 6, 25, 0.1);
+  }
+
+  .abstract-arch {
+    border-radius: 160px 160px 0 0;
+  }
+
+  .ornament-line {
+    background: linear-gradient(to bottom, var(--color-wine), transparent);
+  }
+}
